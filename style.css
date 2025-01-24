@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(./assets/fonts/Roboto-Bold.ttf );
+   
+}
+
+body{
+    font-family: 'Roboto' serif;
+    background: url(./assets/img/img1.avif) center/cover;
+     /* pour que le body prenne VH = 100% de la taille de l'ecran ( viewport height) */
+    min-height: 100vh;
+} 
+  
+
+/* body {
+background: red;
+} */
+
+/* l'etoile permet de donner du 
+style a tous les elements */
+
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+
+h1 {
+   text-transform: uppercase;
+   letter-spacing: 3px; /* permet de mettre 
+   les espaces entre les lettres */
+   text-align: center; /* centrer le text sur 
+   la verticale*/
+   /* les tailles de polices doivent être
+    en rem  s'adapte aux écrans*/
+   /* pour les commentaires c'est crtl +
+    slash (ctrl + /) le slash c'est la touche en
+    /* dessous de L le "" */ 
+   font-size: 2.5rem;
+   /* 1rem = 16px */
+   /* 10% de la taille de l'écran de l'utilisateur 
+   font-size: 10vw viewportwidth 
+    il permet d etre responsive*/
+
+   text-shadow: 3px -1px 3px #97494970;
+   /* color: rgba(100, 10, 29, 0.452); */
+   /* ici il est question de la couleur du texte */
+   color: #c922c1;
+   /* on peut chercher des polices sur google font */
+   font-family: "Oswald", sans-serif;
+
+   
+}
+
+main{
+   /* la propriete mini height permet
+   de dire au minimun prend cette taille
+   mais des elements supplementaire te sont ajouté
+   tu peux t'agrandir; */
+    min-height: 500px;
+    /* le faite de prendre une width en % 
+    permet a la largeur de s'adapter à la 
+    taille de l'écran */
+    width: 90%;
+    background:rgb(245, 245, 245, 0.5);
+    /* pour centrer un flex ou une boite 
+    il faut faire margin 0 auto  en faite 
+    en mettant deux paramètres la première
+    règle le haut et le bas le deuxième la 
+    gauche et la droite*/
+    margin:0 auto;
+    border: 2px solid cyan;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow:  0px 1px 3px 7px #47a6ad;
+    padding: 15px;
+}
+
+h2{
+    margin: 0;
+}
+
+/* FLEXBOX */
+
+/* le flexbox permet de donner des 
+propriétes au alentour de notre classe */
+
+.flexbox,
+ .grid,
+  .absolute{
+    border: 2px solid skyblue;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    min-height: 150px;
+
+}
+
+
+.flexbox ul{
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+/* pour pointer sur les li qui 
+sont dans notre classe flexbox
+et leur enlever les points devant */
+.flexbox li{
+    list-style: none;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    background: turquoise;
+    /* centrer un unique element 
+    verticalement et horizontalement */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+/* GRID */
+.grid-container {
+    display: grid;
+    /* pour que les elements de 
+    la grille soit les uns 
+    a coté des autres il faut 
+    le grid-template-colum*/
+    grid-template-columns: 30% 70%;
+
+}
+.grid img {
+width: 80%;
+margin: 20px auto;
+/* le display block c'est pour lui 
+dire prendre tt l'espace en fait par defaut
+contrairement aux autres elements
+les images ne sont pas par défaut en 
+display block */
+display:block ;
+}
+
+/* en fait le form est le parents
+de tt ces input */
+
+input, textarea {
+
+margin: 5px;
+border: 1px solid darkblue;
+padding: 10px;
+font-size: 1rem;
+
+/* en fait il savoir que le font font-family: 
+du body n'impacte pas le police des placeholder
+des input donc il faut repointer*/
+
+font-family: 'Roboto' serif ;
+border-radius: 5px;
+
+}
+
+form{
+    /* les elements du formulaire sont 
+    alors classé en bloc les uns au dessus 
+    des autres */
+    display: grid;
+
+    /* une facon de dire ma grille
+    doit etre constitué de 2 colonnes
+    donc ranges moi ts les inputs dans 
+    2 colonnes */
+
+     grid-template-columns: 1fr 1fr ;
+
+     /* avec cette precision on lui dit 
+     on veut un tableau de 2 colonnes 
+     3 lignes */
+
+     grid-template-rows: 1fr 1fr 1fr;
+     grid-template-areas: 
+     "i1 i2"
+     "ta ta"
+     "vi bt"; 
+}
+
+textarea {
+ /* grid area fait allusion a la zone 
+ dans laquelle doit se trouver notre
+ text area précedement dessine */
+    
+ /* on affecte a textarea la variable ta */
+ grid-area:ta;
+ height: 40px ;
+ resize: none;
+
+} 
+
+#btn-submit {
+
+/* on affecte a btn-submit la variable bt */
+ grid-area: bt;  
+ cursor: pointer;
+ background: cyan; 
+ transition: 0-2s;
+}
+
+#btn-submit:hover{
+    background: darkblue;
+    color: white;
+
+}
+
+/* ABSOLUTE */
+
+.absolute{
+    /* NB si on ne met pas l'element en realative
+    il se positionne en absolute par rapport au 
+    body */
+    position: relative;
+}
+#circle1 {
+    height: 80px;
+    width: 80px;
+    background: skyblue ;
+    /* meme si on lui a mis un background:
+    etant donné que c'est un span tant
+    qu'on ne lui a pas donné la position
+    absolute il n'apparait pas; */
+    position: absolute;
+    border-radius: 150px;
+    /* notre circle etant en absolute 
+    on peut lui mettre une valeur en top
+    en bottom en left */
+
+    
+    top: 0;
+    right: 0;
+
+}
+
+#circle2 {
+    height: 40px;
+    width: 40px;
+    border-radius: 150px;
+    background: teal ;
+    position: absolute ;
+    left: 50%;
+    /* translate de 50% par rapport à 
+    ta propre taille rayon */
+    transform: translateX(-50%);
+    top: 100px;
+
+}
+
+/* RESPONSIVE */
+ /* le faire en se rassurant que l'affichage
+ est a 100% dans le navigateur */
+@media screen and (max-width: 800px )  {
+
+.grid-container{
+    display: block;
+}     
+ .grid-container img{
+      width: 40%;
+ }    
+}
+
+@media screen and (max-width: 610px)  {
+    .flexbox ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form{
+      
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "i1"
+        "i2"
+        "ta"
+        "bt";
+
+
+     }    
+}
+
+
+
+
+
+
+
+
+
+
+
