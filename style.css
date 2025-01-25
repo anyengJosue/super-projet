@@ -28,7 +28,7 @@ style a tous les elements */
 
 h1 {
    text-transform: uppercase;
-   letter-spacing: 3px; /* permet de mettre 
+   letter-spacing: 10px; /* permet de mettre 
    les espaces entre les lettres */
    text-align: center; /* centrer le text sur 
    la verticale*/
@@ -63,7 +63,7 @@ main{
     permet a la largeur de s'adapter à la 
     taille de l'écran */
     width: 90%;
-    background:yellow;
+    background:salmon;
     /* pour centrer un flex ou une boite 
     il faut faire margin 0 auto  en faite 
     en mettant deux paramètres la première
