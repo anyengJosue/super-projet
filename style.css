@@ -63,7 +63,7 @@ main{
     permet a la largeur de s'adapter à la 
     taille de l'écran */
     width: 90%;
-    background:purple;
+    background:salmon;
     /* pour centrer un flex ou une boite 
     il faut faire margin 0 auto  en faite 
     en mettant deux paramètres la première
